@@ -9,8 +9,8 @@ if not inet then
     return
 end
 
-local BRIDGE = "https://bridge.kushie.dev"
-local KEY = "satisfactory-lexis-2026"
+local BRIDGE = "https://YOUR-BRIDGE-URL"
+local KEY = "YOUR-API-KEY-HERE"
 local VERSION = "3.0"
 
 -- ============================================

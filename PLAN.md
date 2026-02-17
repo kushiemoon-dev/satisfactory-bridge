@@ -3,14 +3,14 @@
 ## État actuel (17 Feb 2026)
 
 ### ✅ Ce qui marche
-- **Bridge Go server** — tourne sur Alpine LXC, accessible via `bridge.kushie.dev`
+- **Bridge Go server** — tourne sur Alpine LXC, accessible via `YOUR-BRIDGE-URL`
 - **API REST** — endpoints `/command`, `/response`, `/responses`, `/queue`, `/status` OK
 - **Uptime** — 140h+ stable
 
 ### ❌ Ce qui ne marche pas
 - **Parsing de saves** — les parsers Python/Go ne fonctionnent plus (format save changé ?)
 - **Connexion in-game** — Lua script v7.2 ne communique plus correctement avec le bridge
-- **LAN access** — 192.168.1.3:8080 timeout (seulement accessible via reverse proxy)
+- **LAN access** — YOUR-LXC-IP:8080 timeout (seulement accessible via reverse proxy)
 
 ### ⚠️ Problèmes connus
 - FicsIt Networks: POST crash sur serveurs Linux → workaround GET existe déjà
@@ -25,11 +25,11 @@
 **Objectif:** Vérifier que le bridge est joignable depuis le jeu
 
 **Étapes:**
-1. Vérifier LXC Alpine (192.168.1.3) — est-ce qu'il tourne encore ?
-2. Tester le bridge directement: `curl http://192.168.1.3:8080/status`
-3. Tester via reverse proxy: `curl https://bridge.kushie.dev/status`
-4. Vérifier la config NPM (Nginx Proxy Manager) pour bridge.kushie.dev
-5. Depuis le jeu: tester si FicsIt Networks peut atteindre bridge.kushie.dev
+1. Vérifier LXC Alpine (YOUR-LXC-IP) — est-ce qu'il tourne encore ?
+2. Tester le bridge directement: `curl http://YOUR-LXC-IP:8080/status`
+3. Tester via reverse proxy: `curl https://YOUR-BRIDGE-URL/status`
+4. Vérifier la config NPM (Nginx Proxy Manager) pour YOUR-BRIDGE-URL
+5. Depuis le jeu: tester si FicsIt Networks peut atteindre YOUR-BRIDGE-URL
 
 **Livrable:** Bridge accessible et confirmé joignable depuis le jeu
 
@@ -47,8 +47,8 @@ if not inet then
     return
 end
 
-local BRIDGE = "https://bridge.kushie.dev"
-local API_KEY = "satisfactory-lexis-2026"
+local BRIDGE = "https://YOUR-BRIDGE-URL"
+local API_KEY = "YOUR-API-KEY-HERE"
 
 print("[Bridge] Testing connection...")
 

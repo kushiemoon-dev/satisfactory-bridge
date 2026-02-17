@@ -2,8 +2,8 @@
 -- Ultimate AI-Factory Integration - NEW JSON FORMAT + SMART SYSTEM
 
 local inet = computer.getPCIDevices(classes.FINInternetCard)[1]
-local BRIDGE = "https://bridge.kushie.dev"
-local API_KEY = "satisfactory-lexis-2026"
+local BRIDGE = "https://YOUR-BRIDGE-URL"
+local API_KEY = "YOUR-API-KEY-HERE"
 
 print("════════════════════════════════════════════════")
 print("  ◆ LEXIS FACTORY CONTROL v7.4 ◆")  
