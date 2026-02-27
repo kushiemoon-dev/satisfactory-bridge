@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Satisfactory Bridge - OpenRC init script
+
+name="satisfactory-bridge"
+description="HTTP bridge for OpenClaw <-> Satisfactory"
+
+command="/opt/satisfactory-bridge/bridge"
+command_background="yes"
+pidfile="/run/${name}.pid"
+output_log="/var/log/${name}.log"
+error_log="/var/log/${name}.log"
+
+depend() {
+    need net
+    after firewall
+}
+
+start_pre() {
+    checkpath --directory --owner root:root --mode 0755 /opt/satisfactory-bridge
+}
